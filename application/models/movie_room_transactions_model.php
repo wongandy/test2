@@ -157,7 +157,11 @@ class Movie_room_transactions_model extends CI_Model
 	}
 	
 	function have_advanced_reservation($check_in,$room_id){
+<<<<<<< HEAD
 		$query = "SELECT id FROM movie_room_transactions WHERE check_in>'".$check_in."' AND deleted=0 AND done=0 AND room_id=".$room_id;
+=======
+		$query = "SELECT id FROM movie_room_transactions WHERE check_in>='".$check_in."' AND deleted=0 AND done=0 AND room_id=".$room_id;
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 		
 		$row = $this->db->query($query)->row();
 		
@@ -180,7 +184,11 @@ class Movie_room_transactions_model extends CI_Model
 	}
 	
 	function get_room_occupancy2($rooms){
+<<<<<<< HEAD
 		$query = "SELECT a.id,a.room_id,a.no_of_person, a.check_in,a.check_out,c.name AS movie_name,a.movie_id FROM movie_room_transactions AS a 
+=======
+		$query = "SELECT a.id,a.room_id,a.no_of_person, a.check_in,a.check_out,c.name AS movie_name FROM movie_room_transactions AS a 
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 			LEFT JOIN movies AS c ON c.id=a.movie_id 
 		WHERE DATE(a.check_in)='".date('Y-m-d')."' AND a.deleted=0 AND a.done=0 ORDER BY a.check_in";
 		
@@ -196,7 +204,11 @@ class Movie_room_transactions_model extends CI_Model
 				$no_of_person = $val->no_of_person;
 			
 			// $data[$val->room_id][$val->check_in] = array($val->id, $no_of_person, $val->check_in, $val->check_out, $val->movie_name);
+<<<<<<< HEAD
 			$data[$val->room_id.'|'.$val->check_in] = array($val->id, $no_of_person, $val->check_in, $val->check_out, $val->movie_name, $val->movie_id);
+=======
+			$data[$val->room_id.'|'.$val->check_in] = array($val->id, $no_of_person, $val->check_in, $val->check_out, $val->movie_name);
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 		}
 		
 		$query = "SELECT * FROM vacant_room_schedule WHERE status=1 AND DATE(datetime_created)='".date('Y-m-d')."'";
@@ -205,7 +217,11 @@ class Movie_room_transactions_model extends CI_Model
 		
 		foreach($room_vacant as $key => $val){
 			// $data[$val->room_id][$val->check_in] = array($val->id, 0, $val->check_in, $val->check_out, 'vacant');
+<<<<<<< HEAD
 			$data[$val->room_id.'|'.$val->check_in] = array($val->id, 0, $val->check_in, $val->check_out, 'Vacant',0);
+=======
+			$data[$val->room_id.'|'.$val->check_in] = array($val->id, 0, $val->check_in, $val->check_out, 'Vacant');
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 		}
 		
 		ksort($data);
@@ -237,6 +253,7 @@ class Movie_room_transactions_model extends CI_Model
 			return 0;
 	}
 	
+<<<<<<< HEAD
 	function get_mrt_details($mrt_id){
 		$query = "SELECT * FROM movie_room_transactions WHERE id=".$mrt_id;
 		$row = $this->db->query($query)->row();
@@ -247,6 +264,9 @@ class Movie_room_transactions_model extends CI_Model
 	function update_room_movie($update_data, $mrt_id){
 		$this->db->update('movie_room_transactions', $update_data, array('id' => $mrt_id) );
 	}
+=======
+	
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 	
 	
 	

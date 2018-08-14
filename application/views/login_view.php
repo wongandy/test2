@@ -128,10 +128,14 @@
 				{
 					setTimeout(function(){
 						$("body").mLoading("hide");
+<<<<<<< HEAD
 						if(result.role==1 || result.role==4)
 							window.location.href = "<?php echo $this->config->base_url().'movies';?>";
 						else
 							window.location.href = "<?php echo $this->config->base_url().'dashboard/monitor';?>";
+=======
+						window.location.href = "<?php echo $this->config->base_url().'movies';?>";
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 					}, 1000);
 				}
 				else

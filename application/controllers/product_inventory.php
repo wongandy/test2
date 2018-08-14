@@ -47,7 +47,11 @@ class Product_inventory extends CI_Controller {
 		$table_draw .= '<tbody>';
 		
 		foreach($product_inventory as $key => $val){
+<<<<<<< HEAD
 			$table_draw .= '<tr><td><div style="width:200px;"><a href="javascript:void(0)" class="view_pi" pi_id="'.$val->id.'">'.$val->name.'</a></div></td>';
+=======
+			$table_draw .= '<tr><td><div style="width:200px;"><a href="#" class="view_pi" pi_id="'.$val->id.'">'.$val->name.'</a></div></td>';
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 			for($day=1;$day<=$max_day;$day++){
 				if($day<10)
 					$day_ = '0'.$day;
@@ -131,7 +135,11 @@ class Product_inventory extends CI_Controller {
 		$theDate = $year.'-'.$month.'-'.$dayx;
 		$theDate = date('Y-m-d', strtotime($theDate.' -4 days'));
 		foreach($product_inventory as $key => $val){
+<<<<<<< HEAD
 			$table_draw .= '<tr><td><div style="width:200px;"><a href="javascript:void(0)" class="view_pi" pi_id="'.$val->id.'">'.$val->name.'</a></div></td>';
+=======
+			$table_draw .= '<tr><td><div style="width:200px;"><a href="#" class="view_pi" pi_id="'.$val->id.'">'.$val->name.'</a></div></td>';
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 			// for($day=1;$day<=$max_day;$day++){
 			// for($day=$dayx;$day<=$max_day;$day++){
 			// for($day=$dayx-4;$day<=$max_day;$day++){
@@ -175,7 +183,11 @@ class Product_inventory extends CI_Controller {
 				  }
 					$details .= '</div>';
 					
+<<<<<<< HEAD
 					$div_draw .= '<p><a href="javascript:void(0)" class="view-detail" detail="'.$details.'">View Details</a></p>';
+=======
+					$div_draw .= '<p><a href="#" class="view-detail" detail="'.$details.'">View Details</a></p>';
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 				}
 					
 				// if(!empty($pi_result[$day_][$val->id])){

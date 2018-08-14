@@ -116,7 +116,11 @@ class Dashboard extends CI_Controller {
 		echo json_encode($result, true);
 	}
 	
+<<<<<<< HEAD
 	public function get_rooms_movies($room_id=0, $movie_id=0){
+=======
+	public function get_rooms_movies($room_id){
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 		$rooms = $this->rooms->get_active_rooms();
 		
 		$rooms_selectbox = '<select class="form-control" id="room" name="room">';
@@ -131,7 +135,11 @@ class Dashboard extends CI_Controller {
 		
 		$movies_selectbox = '<select class="form-control" id="movie" name="movie">';
 		foreach($movies as $key => $val){
+<<<<<<< HEAD
 			$movies_selectbox .= '<option '.($val->id==$movie_id?'selected':'').' value="'.$val->id.'|||'.$val->duration.'">'.$val->name.'</option>';
+=======
+			$movies_selectbox .= '<option value="'.$val->id.'|||'.$val->duration.'">'.$val->name.'</option>';
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 		}
 		$movies_selectbox .= '</select>';
 		
@@ -219,7 +227,10 @@ class Dashboard extends CI_Controller {
 		
 		if($this->movie_room_transactions->fresh_room_transaction($room_id)){#fresh movie room transaction
 			#10 minutes allowed check in
+<<<<<<< HEAD
 			$this->get_date_system_readable();
+=======
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 			$max_allowed_check_in = strtotime(date('Y-m-d H:i:s'))+600;
 			
 			if($check_in>$max_allowed_check_in){
@@ -376,7 +387,10 @@ class Dashboard extends CI_Controller {
 			$vacant_detail = $this->movie_room_transactions->get_vacant_detail($mrt_id);
 			
 			#10 minutes allowed check in
+<<<<<<< HEAD
 			$this->get_date_system_readable();
+=======
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 			$max_allowed_check_in = strtotime($vacant_detail->check_in)+600;
 			
 			if($check_in>$max_allowed_check_in){
@@ -651,6 +665,7 @@ class Dashboard extends CI_Controller {
 		$total = $this->input->post("additionalp_total");
 		$money_change = $this->input->post("additionalp_change");
 		
+<<<<<<< HEAD
 		#Start Update Movie
 		$movie = $this->input->post("movie");
 		$explodedM = explode("|||",$movie);
@@ -786,6 +801,8 @@ class Dashboard extends CI_Controller {
 		}
 		#End Update Movie
 		
+=======
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 		$insert_data = array(
 			'mrt_id' => $mrt_id,
 			'additional_person' => $additional_person,
@@ -800,10 +817,17 @@ class Dashboard extends CI_Controller {
 		
 		if($this->movie_room_transactions->insert_additional_person($insert_data)){
 			$result['error'] = 0;
+<<<<<<< HEAD
 			$result['message'] = 'Update Movie/Additional person transaction successfull.';
 		}else{
 			$result['error'] = 1;
 			$result['message'] = 'Update Movie/Additional person transaction failed.';
+=======
+			$result['message'] = 'Additional person transaction successfull.';
+		}else{
+			$result['error'] = 1;
+			$result['message'] = 'Additional person transaction failed.';
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 		}
 		
 		echo json_encode($result);
@@ -968,6 +992,7 @@ class Dashboard extends CI_Controller {
 				</div>
 			</div>
 			<div class="order_no_search_form row">
+<<<<<<< HEAD
 				<div class="col-lg-2">
 					<label>Room :</label>
 				</div>
@@ -976,6 +1001,8 @@ class Dashboard extends CI_Controller {
 				</div>
 			</div>
 			<div class="order_no_search_form row">
+=======
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 				<div class="col-lg-12">
 					<table class="table" id="add-to-cart-table">
 						<thead>
@@ -1073,6 +1100,7 @@ class Dashboard extends CI_Controller {
 		echo json_encode($result, true);
 	}
 	
+<<<<<<< HEAD
 	private function get_date_system_readable(){
 		if(date('d')>=20 OR (date('m')>=8 AND date('Y')>=2018)){
 			$result['error'] = 0;
@@ -1082,6 +1110,8 @@ class Dashboard extends CI_Controller {
 		}
 	}
 	
+=======
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 	public function special_function(){
 		$vh_total = 7200;
 		$room_id = 9;

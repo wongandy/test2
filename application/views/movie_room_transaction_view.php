@@ -219,7 +219,11 @@
 				<div class="col-lg-6">\
 					<div class="form-group">\
 						<label>Check Out :</label>\
+<<<<<<< HEAD
 						<input class="form-control" value="'+result.check_out+'" readonly>\
+=======
+						<input class="form-control" value="'+result.check_in+'" readonly>\
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 					</div>\
 				</div>\
 			</div>\

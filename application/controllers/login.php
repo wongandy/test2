@@ -40,7 +40,10 @@ class Login extends CI_Controller {
 			);
 					
 			$this->session->set_userdata($data);
+<<<<<<< HEAD
 			$result['role'] = $user_detail->role_id;
+=======
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 		}else{
 			$result['error'] = 1;
 			$result['message'] = 'Username or/and Password did not match!';

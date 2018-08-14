@@ -28,10 +28,17 @@
 		<li <?php echo ($menu_id==4?'class="selected"':''); ?> >
 			<a href="<?php echo $this->config->base_url().'users';?>"><i class="fa fa-dashboard fa-fw"></i>Users</a>
 		</li>
+<<<<<<< HEAD
 		<li <?php echo ($menu_id==5?'class="selected"':''); ?> >
 			<a href="<?php echo $this->config->base_url().'movies';?>"><i class="fa fa-dashboard fa-fw"></i>Movies</a>
 		</li>
 		<?php endif;?>
+=======
+		<?php endif;?>
+		<li <?php echo ($menu_id==5?'class="selected"':''); ?> >
+			<a href="<?php echo $this->config->base_url().'movies';?>"><i class="fa fa-dashboard fa-fw"></i>Movies</a>
+		</li>
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 		<?php if($this->session->userdata('role')==1):?>
 		<li <?php echo ($menu_id==6?'class="selected"':''); ?> >
 			<a href="<?php echo $this->config->base_url().'rooms';?>"><i class="fa fa-dashboard fa-fw"></i>Rooms</a>

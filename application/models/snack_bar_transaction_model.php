@@ -83,7 +83,11 @@ class Snack_bar_transaction_model extends CI_Model
 	}
 	
 	function get_order_header2($order_no){
+<<<<<<< HEAD
 		$query = "SELECT a.order_type,a.total,a.money,a.money_change,b.name as room_name FROM snack_bar_transactions_header AS a LEFT JOIN rooms AS b ON a.room=b.id WHERE a.order_no=".$order_no." AND a.paid=0";
+=======
+		$query = "SELECT order_type,total,money,money_change FROM snack_bar_transactions_header WHERE order_no=".$order_no." AND deleted=0 AND paid=0";
+>>>>>>> 9579a53575e97dad17a475845d906729a0e1cf99
 		
 		return $this->db->query($query)->row();
 	}
